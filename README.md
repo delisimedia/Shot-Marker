@@ -46,7 +46,7 @@ ShotMarker is a fast, streamlined pre‑production tool for building local, easy
 - Requirements: matching clip names or filenames in the Premiere project bin (not only on a timeline).
 
 ## Installation
-
+Download the latest release here: https://github.com/delisimedia/Shot-Marker/releases
 
 
 ## Notes
