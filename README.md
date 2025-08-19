@@ -32,18 +32,10 @@ ShotMarker is a fast, streamlined pre‑production tool for building local, easy
 ## Typical Workflow
 
 1. Add footage folders to a project and start playback.
-2. Mark in/out points and apply tags or title presets as you scrub.
-3. Auto‑export previews while you mark, or store in/out only and export later in batch.
+2. Mark in/out points and apply tags and titles.
 4. Drag markers or generated sequences into Premiere to start cutting immediately.
 5. Search across projects to pull matching b‑roll for repeat clients or build reels.
 
-## Premiere Pro Integration (from in‑app Help)
-
-- Export in/out points to a new .prproj; open it and double‑click clips in the Project panel to see your ShotMarker ranges in the Source Monitor.
-- Matching Methods:
-  - By Marker/Clip Names (recommended when you’ve exported/collected clips from ShotMarker).
-  - By Source Filenames (when working against original camera files in Premiere).
-- Requirements: matching clip names or filenames in the Premiere project bin (not only on a timeline).
 
 ## Installation
 Download the latest release here: https://github.com/delisimedia/Shot-Marker/releases
