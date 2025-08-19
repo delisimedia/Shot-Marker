@@ -58,3 +58,705 @@ Download the latest release here: https://github.com/delisimedia/Shot-Marker/rel
 
 ShotMarker replaces the slow, manual pre‑production logging stage with a high‑performance, organized system that gets you into the edit faster.
 
+
+
+
+Full Version History:
+
+What's new in 6.7.6
+- Critical fixes: Identified and corrected several major bugs in seeking and playback accuracy in timeline view.
+- Upgraded ffmpeg version and now PROPERLY packaged ffmpeg with the application.
+
+What's new in 6.7.5
+- Critical fixes to solve all_items and filtered_markers mismatches, placeholder insertion bugs involving last_processed_marker_uuid flag being handled poorly. 
+- Major UX improvements to the pinning system. 
+- Pinned settings are accessible right from the video player widget. 
+- Will show active pin immediately in video player widget UI now, as well as a delete button to clear the pin quickly and easily.
+- New Save as Pin marker context menu option.
+- Fixed bug where unified add tags and titles dialog was doing a full frerfresh rather than targeted refresh of playlist.
+- Fixed major bug where project-id failed to pass to memory after video file import.
+
+What's new in 6.7.4
+- Improvements to compatibility and seek performance with sub 50-series gpus.
+- Fixed FilteredPlaylistDialog not working in the the sub 50 series gpu pathway. 
+- Fixed FilteredPlaylistDialog causing the program to freeze on accept in the sub 50 series gpu pathway
+- If 4:2:2 footage is detected on a non 50 series gpu, will lower res to a quarter for better performance.
+- Fixed tags not being added properly if they contained hyphens and other special characters.
+- When proxy clip is turned off in FilteredPlaylistDialog and source clip files are missing, it safely plays proxy clips instead.
+- Display_order now increments at +100
+- Deleting a marker triggers marker renumbering logic.
+- Placeholder markers now persist through apply_filters and folder navigation. 
+- Fixed accuracy of export queue progress dialog. 
+
+
+What's new in 6.7.3
+- Continued updates to placeholder system and marker creation.
+
+What's new in 6.7.2
+- Adjustments to marker positioning logic after creating new marker...
+- Moved toggle mode switch from repalcement mode and normal mode to a mroe visible location.
+
+What's new in 6.7.1
+- Critical fix where FilteredPlaylistDialog mpv cleanup was creating an issue that could block drag and drop. 
+- Added new Proxy Clip toggle to FilteredPlaylistDialog.
+- Added rerfresh button and logic to FilteredPlaylistDialog.
+- Editing a marker's title or tags that is in an active playlist will refresh playlist.
+- Fixed a marker title numbering bug that led to incorrect incrementation.
+- Undo system now works for batch folder deletion.
+- Fixed some bugs in timeline view. 
+
+What's new in 6.7.0
+-Dividing lines now appear in the project bin to separate folders and markers clearly.
+- New basic Ctrl-Z undo system - right now can only undo reccent deletions of markers/folders.
+- Add and Remove favorites options added to the MarkerThumbnail context menu.
+- Remove tags now has the option to alternatively view and remove ALL tags within all selected markers regardless if they are shared or not.
+- Fixed bug when in create new marker mode, the markers being created would conflict with existing index positions.
+- Fixed bug when creating new marker and replacing marker, project_id was not being passed until manual refresh.
+- Fixed bug when creating new marker while a previous marker was still exporting, the markekr numbering would not increment.
+- Other bug fixes and UX improvements.
+
+What's new in 6.6.9
+- Thumbnail generation progress updates and load bar now in status bar.
+- Another potential fix for race condition crash that happens after video file import. 
+- Fixed a bug in FilteredPlaylistDialog.
+
+What's new in 6.6.8
+- Fixed a major edge case bug that occured in Timeline View that caused a mismatch in  the timeline seek position and playhead position and the mpv video player for certain clips.
+- Fixed a bug that blocked marker reordering in the root. 
+- Fixed bug where the first clip in the timeline wasn't getting its pixmap screenshot applied.
+- Create Thumbnails dialog can now recreate existing thumbnails, has parallel processing, properly refreshes and invalidates thumbnail cache when finishing.
+- Other bug fixes and improvements.
+
+What's new in 6.6.7
+- Thumbnail creation now uses FFMPEG, and can embed the active LUT into the thumbnail.
+- Continued improvements to background thumbnail generator. Now uses FFmpeg instead of OpenCV, properly throttles generation when scrolling to improve, improved performance when generating and sync checking for missing thumbnails, O(1) lookups instead of O(n) lookups.
+- Apply_filters call now happens and finishes before thumbnail generation workers are created after video file import.
+- Another bug fix related to timeline view and clip_duration.
+What's new in 6.6.6
+- Changes in the project manager now immediately are updated in project panel.
+- Fixed bug in VideoClipMarkerDialog title preview.
+- Video importing now has a single progress dialog instead of two.
+- Batch thumbnail exporter now takes screenshot at midpoint instead of first frame.
+
+What's new in 6.6.5
+- New export options H.264 Native and MOV Native.
+- UI and UX improvements to Batch Clip Exporter.
+- Fixed a bug where collect clips was not respecting folder structure even when the checkbox was checked.
+- Fixed a bug where clip_duration was not properly set in timeline view.
+-Potential bug fix for mismatch in timeline view between playlist and timeline sort order.
+
+What's new in 6.6.4
+- No longer caches gpu_accelerated within a marker's metadata, now is globally cached on database load. 
+- Now determines HEVC gpu accelerated decoding capability on database load. 
+- Fixed bug where on project load, the auto drive letter relinking was failing for source only clips.
+
+What's new in 6.6.3
+- Possible stability and crash fixes regarding threads being destroyed during video import.
+- Now when you delete markers while thumbnails are being generated for them, it properly cleans up all orphaned thumbnails from the cache. 
+- Bug fix where while expanding all project sections in cross project view, a race condition could cause a project section to glitch out and not fully expand.
+- Fixed crash on loading HEVC video on certain machines.
+- Possible crash fix that could occur while unloading and loading the next video file into the video player.
+- Added autoscroll and fixed bugs in Project Manager dialog.
+- Added search and improved UI styling in cross-project project filtering dialog. 
+- Other minor UI and UX improvements.
+
+What's new in 6.6.2
+-Added Quick Tagging feature to timeline view.
+- Fixed bugs with tagging within timeline view: layout issues, marker updating syncing issues, timeline + video player syncing issues. 
+- Various other ux improvements and bug fixes
+- A number of interaction changes to fix how Cross Project View handles the filteredplaylistdialog differently, particularly with its new tagging system that we added. 
+- Fixed bug in sequence generation, now properly adds metadata attributes to clips in premiere.
+- Fixed bug where the ffprobe calls did not add audio metadata during video importing.
+- Fixed bug where in unified add tags and titles dialog that could cause a race condition when trying to do multiple actions at once.
+- Fixed bug where focus was not restored onto filteredplaylist after tagging.
+- Fixed a bug where backups were all created with identical timestamps.
+- Now supports up to 5 backups in rotation.
+- Added copy button to AI dialogs
+
+What's new in 6.6.1
+- Fixed critical bug where import status was not set to false in the database after exporting preview clip.
+- Improved UX for tagging and titling system with better shortcut control and improved behavior for faster tagging.
+- Can now drag and drop into folder breadcrumbs.
+- Added Sort Project Markers button into MarkerListWidget.
+- Fixed bug in sort order of Premiere generated XMl sequences.
+- Added ability to edito the sequence order before generation.
+- Tweaked some incorrect information in the filters help dialog and playlist help dialog.
+- UI tweaks to EditTags/Titles dialog.
+- Fixed some marker drag state bugs for MarkerThumbnail
+
+What's new in 6.6.0
+- Several bug fixes in database marker titles templates
+- Fixed critical bug in batch marker deletion that was deleting wrong markers.
+- Several UX and UI improvements to Edit Tags/Titles dialog.
+- Bug fix that caused incorrect font sizing on marker thumbnail tags label.
+- Possible fix for critical bug that could cause crash on marker dragging. 
+- Attempted fix in place to smooth out screen tearing in virtual grid on high refresh-rate monitors.
+- Empty folder thumbnail now shows correctly when a folder is empty with just empty subfolders.
+- Fixed bug with playlist help dialog styling 
+
+What's new in 6.5.9
+- Fixed crash in relinker involving null cilp_filename.
+- Added more intelligent matching to the relinker
+- When loading a project, the linking functionality now has intelligent linking that can account for drive letter changes.
+- Fixed bug where repair tag integrity results dialog would not trigger.
+- Added ability to update marker titles and tags within the filtered playlist
+- Bug fixes in filtered playlist.
+
+What's new in 6.5.8
+- AdvancedFiltersDialog now displays tags in 3 column grid.
+- Cross Project View tags filtering dialog now displays tags in a 5 column grid.
+- New filters help dialog.
+- Fixed bug where Separate Tags + Titles was not respecting strict tag filtering or exclusions.
+- Fixed several bugs across cross project view filtering logic.
+- Added Match/separate Titles + Tags into Cross Project View
+- Added In/Out Point filtering into Cross Project View
+- Changed favorites toggle filter button in cross project view to be a paintevent favorites star.
+- Clear filters button in cross project view now properly only shows when filters are active.
+- Match/Separate titles + tags now shows a pushbutton in MarkersListWidget when filtering is active.
+- Strict tag filter push button in markerlistwidget now properly shows when at least 2 tags are actively being filtered.
+
+What's new in 6.5.7
+- New "Open Separately" option that will open a separate model playlist if an existing playlist is open.
+- Searching in the project bin now properly sets the clear filters button.
+- Empty filter placeholder now shows what folder you are in if you are in a breadcrumbed path.
+- Empty filter placeholder now provides a "Search in Root Bin" button if you are inside a folder during filtering.
+- Removed unnecessary ffprobe call in PeekDialog
+- Fixed some bugs in PeekDialog and improved dialog initialization times.
+- FilteredPlaylist dialog now opens with smaller dimensions on 1080P monitors.
+- Load progress dialog in filteredplaylist dialog will now open relative to current monitor.
+
+What's new in 6.5.5
+- Timeline View (Filtered Playlist) is now non-modal and can be resized.
+- Can now add markers to the timeline rather than create new instances very time.
+- Can filter markers (restrict selection) via button without closing the filtered playlist. 
+- Handling for potential file lock issues if trying to delete or change a preview clip that is loaded in the filtered playlist...
+- Some bug fixes with filtered playlist
+
+What's new in 6.5.4
+- Added screenshot pixmaps to playlist timeline.
+- Fixed a new bug in filteredplaylistdialog that caused markers to play at the wrong framerate.
+- Adjusted playhead horizontal auto-scroll logic to left-align the playhead.
+- Slightly improved filtered playlist initialization time with some async loading.
+
+
+What's new in 6.5.3
+-Overhauled filteredplaylist dialog. Now has finer scrubbing, dividing lines, color labels, and shows when one marker starts and ends on the timeline. Can scroll in and out of the timeline. 
+- New Match Tags+Titles filtering mode.
+- Added overview timeline that shows full duration of the playlist, in addition to the main timeline which can be zoomed in and out for finer scrubbing.
+- Further improvements to seeking and scrubbing in Filtered Playlist.
+- Can now set favorites wtihin Filtered Playlist.
+- Fixed bug where toggling favorites in peekdialog did not work.
+- Fixed several bugs in filteredplaylistdialog. 
+- Fixed bug in folderthumbnail screenshot cleanup.
+
+
+What's new in 6.5.2
+- Fixed bug where if no audio was probed by ffmpeg on marker creation, it would populate with default values. Now populates none.
+- New custom paintevent favorites icon on MarkerThumbnails to replace the unicode.
+- New "Play Sequence" ability in Premiere Sequence Builder.
+- Fixed favorites toggling not working cross-project context.
+- Fixed add to sequence not calling the new dialog in cross project context.
+- If audio settings are none then FCP XML Generation and XML sequence generation ow properly avoid setting audio for those clips.
+- Fixed copy markers to project not passing certain database columns with it. 
+- Fixed replacement mode not fully re-generating certain database columns
+- Fixed source-only path not setting clip_duration.
+- Fixed bug in folderpeekdialog where it would not cleanup properly when closing.
+- Fixed crash caused by collect clips dialog.
+- Fixed marker title category headers not being displayed properly in collect clips dialog.
+
+What's new in 6.5.1
+- Major Feature: Premiere Sequence Builder now works on a cross-project database level. 
+- Premiere Sequence Builder now supports 5 sequences at a time.
+- Added new options for sequence configuration.
+- Improved UI and UX for the sequence builder.
+- Other minor  UI/UX fixes and tweaks.
+
+What's new in 6.5.0
+- Major feature:  premiere pro sequence creation methods. 
+- When filters are active in the project bin, the results respect now correctly respect the hierarchical folder structure.
+- Fixed bug in hierarchichal sorting logic.
+
+What's new in 6.4.2
+- Fixed critical bug in premiere batch folder xml generation that led to some clips not being created and clipitem_ids to be duplicated.
+
+What's new in 6.4.1
+- Revised normal view restricted playlist feature to now filter restricted selection markers instead of navigating and selecting them.
+- New filter, active filter, favorites filter, and clear filter image buttons.
+- Fixed bug where in Show Markers Only mode this display order of markerthumbnails was completely wrong.
+- Now we block drag and drop reordering when in show markers only mode and when filtering is active to prevent user error.
+- Fixed file lock issue and improper cleanup when closing the Peek Dialog.
+
+What's new in 6.4.0
+- Changed preview clip name format to contain video filename.
+- Changed screenshot name format to contain video filename.
+- Fixed bug where folder thumbnail cache was not being cleaned up.
+
+What's new in 6.3.9
+- Fixed and optimized performance on loading FolderThumbnails in the project bin. 
+-Adjusted first time startup flow to properly show the main ui as well as the startup dialog.
+- Added recent databases to first time setup if there are recent databases available.
+
+What's new in 6.3.8
+-Added in marker title category headers and integrated into relevant dialogs.
+- New Edit Description dialog from MarkerThumbnail context menu.
+-Style improvements to VideoClipMarkerDialog...
+- Fixed some incorrect text in shortcuts guide.
+- Other minor UX and UI improvements and bug fixes.
+
+What's new in 6.3.7
+- Restricted selection now works like filtering does in cross-project view, which is mucch better UX.
+- Added in Database Marker Title Templates functionality to match Database Tag Templates...
+- New Clear Playlist Filtering button when restricted filtering is active in cross-project view. 
+- UI help for CTRL+CLICK restricted selection feature.
+- Can now CTRL+SHIFT+CLICK for range selection in playlist.
+- Represented folders in the playlist, can now see folder headers and which folder each marker belongs to within the playlist.
+- Can now scrub with arrow keys while in playlist.
+- Fixed bug where filteredplaylistdialog in cross project view was not properly getting passed clip_duration.
+- Project menu is now greyed out if no project is loaded.
+- A few minor tweaks, bug fixes, and ux improvements.
+
+
+What's new in 6.3.6
+- Improved scrubbing speed and accuracy in playlists.
+-Playlists now autoscroll with currently playing video.
+-Added ctrl-click feature in playlist to find, scroll-to, and select markers from the playlist. 
+- Fixed volume and fps settings not persisting into the next loaded video.
+- Added Project Tags dialog to Project menu as well.
+- Renamed program to Shot Marker.
+
+
+What's new in 6.3.5
+- New drag selection in the project bin.
+- Ffprobe now properly gets audio metadata and fills the database with it on marker creation.
+-Audio metadata is now properly passed into FCP XML generation, which fixed a major bug where premiere imports did not have audio.
+-Additionally, we now pass Favorites, Tags, and Marker Title into separate Premiere Pro metadata categories in the FCP XML. 
+-Fixed bug in FCP folder generation that caused subfolders to not be created.
+-Default color is now IRIS, to match premiere.
+- Fixed a new bug that was created that broke the drag and drop system. Now we use a UUID system. 
+-Other minor bug fixes and improvements.
+
+
+What's new in 6.3.4
+-Dozens of minor improvements to UI and UX across a number of areas of the application.
+- Consolidated Add Tags, Remove Tags, and Rename Marker Titles into one unified dialog for ease of access.
+- MarkerThumbnails now properly truncate text and adjust label sizes to better display markers with long titles or many tags.
+- New custom buttons for Project Manager, Project Tags + Marker Titles, Collect Files, and Playlist button. 
+- Added collapse all and expand all options to Project Panel.
+- New "More Info" dialog for markers
+- Updated help dialog to be more up to date.
+- Renamed program to Media Marker.
+- Minor tweaks to styling and UI behavior of first time setup dialog.
+- Fixed bug where show markers only mode would not respect breadcrumbed location. 
+- Improved Strict and Loose tag filtering UX throughout
+
+What's new in 6.3.2
+- Continued optimization improvements to the virtual grid system within cross project view. No longer uses preloading system, now uses a new lazy loading system. Collapse all no longer clears memory pool just hides. Bug fixes and improvements to search handling in cross project view to adapt to new system. 
+- Removed info_label from MarkerThumbnails to reduce visual clutter.
+
+What's new in 6.3.1
+- Critical bug fix where scrolling performance degraded caused by redundant status indicator stylesheet updates. 
+- Status indicators are now paintevents instead of unicode.
+- Tag label on a marker now strips parantheticals.
+- Adjusted all color labels to be more muted and fit dark tone better.
+- Default color label is now "Cerulean"
+
+What's new in 6.3.0
+- Continued optimizations for Virtual Grid to improve responsiveness.
+- Fixed bug where when creating a source only marker, would not switch out of replacement mode.
+- Added more clear UI when a pin is active.
+- Fixed replacement mode renumbering the original marker's number.
+- When toggling between replacement mode to create mode within a load video pathway that began with replacement mode, create mode has special handling which ensures that original marker settings can still be applied to new marker creation as well as positional insertion.
+- Color labels are now reflected in videoclipmarkerdialog. 
+- Improved Move to Folder context menu UX.
+- FolderThumbnails now display up to a 2 x 2 grid of screenshots of its contents as its thumbnail image.
+
+What's new in 6.2.9
+- New indicators on markers that show whether the marker has in and out points or not. 
+- Added search bar to Rename Markers. 
+- Redundant tags now are greyed out in AddTagDialog
+- Removed folder icon on markers, because it was unnecessary.
+- Revamped UI for normal projectg side tag/marker title filtering. Now has search options and improved style that aligns with other tag/marker title dialogs. 
+- AdvancedFiltersDialog now includes all tags/marker titles in the project instead of what was included in the tags_list or preset_list. 
+- Fixed a bug where display order could get corrupted.
+- Fixed a bug in sort project markekrs logic.
+- Delete marker now targets clip_id instead of index, so it is more failproof.
+
+What's new in 6.2.8
+-Fixed crash and instability when importing multiple folders with a lot of footage simulataneously by adding unified batch processing for folder imports.
+- Fixed replacement mode updating not working properly for sourcec-only markers
+- Fixed an annoying bug when updating markers within a breadcrumbed location, the markers would be sent to root without respecting the folder structure.
+-Fixed bug where color labels would not persist after replacement mode updating a marker
+- Sort Project Markers now restores breadcrumbed location after processing.
+-CPU optimization improved to better leverage higher-end systems when importing video files in the bin.
+
+What's new in 6.2.7
+- Several bug fixes caused by virtual grid changes in last update.
+- Now after updating a marker in replacement mode, switches to create new marker mode by default. Will still be able to navigate previous and next markers. 
+-Breadcrumb is no longer hidden when filtering or in markers only view.
+
+What's new in 6.2.6
+- Major optimization overhaul of the cross-project-view virtual grid system. Now with async, batch processing, chunk processing, and threaded. 
+- Cross project view has better loading UI feedback now. 
+
+What's new in 6.2.5
+- Fixed significant optimization flaw in the folder and marker reordering process (was reordering and apply filters for every marker/folder in a batch).
+- Alt+Drag is now the premiere import drag in normal view.
+-Added custom pixmaps to inform user when they are internal reordering vs importing into premiere.
+- Fixed selection state visual bugs in cross project view.
+- UI improvements to Database Tag Templates dialog.
+- Added resizeEvent for cross project view.
+- Removed debounce timer for cross project view virtual grid.
+- Added volume slider to PeekDialog.
+- Fixed PeekDialog shortcuts not working.
+- Added "Load Video in Player" to cross project view marker context menu.
+- Fixed screenshots not showing during loading placeholder when using the peekdialog in cross-project-view.
+- In cross project view, double click on a marker now opens the peekdialog instead of trying to load the video into the player.
+-Some UI improvements to cross project view button layout. 
+
+What's new in 6.2.4
+- Bug fixes in apply_filters flow that was causing scroll position loss and stuttery visible UI updates. Process is much smoother.
+- Added loading placeholder when expanding a project section in cross project view.
+- Fixed common crash in cross project view.
+- Improved optimization of scrolling in virtual grid in cross project view.
+- Fixed visual selection bugs in cross project view.
+
+What's new in 6.2.3
+- Added auto looping in and out point functionality for Video Timeline.
+- Now clicking on green timeline visual auto sets those in and out points.
+- Can now toggle between Edit Marker and Create New Marker mode when in replacement mode.
+- When opening a marker in replacement mode, it auto plays and scrubs to in_point.
+- Fixed slight syncing issues as well as visual misalignment within timeline between slider handle and playhead.
+- Continued UX and UI style improvements to VideoClipMarkerDialog.
+- UX and UI style improvements to TagListDialog. 
+
+What's new in 6.2.2
+- Improvements and redesign of VideoClipMarkerDialog UI.
+- Improved UX when in replacement mode in VideoClipMarkerDialog.
+- New Reset Settings button in the VideoClipMarkerDialog.
+- Fixed a critical bug in pinned settings that could cause the project tags_list to be overwritten by stale data.
+- Fixed a critical bug in remove_tag_from_clip() that resulted in failed data persistence within the clips_tags table.
+- Improved UI and added search to TagSelectionDialog and AddTagDialog.
+- Renamed instances of Clip Name Template to Marker Title Preset.
+- Adjust several areas to reflect the "blue" tag and "orange" marker title preset dynamic. 
+- Importing videos now respects ordering of files in explorer.
+
+What's new in 6.2.1
+- Added improved UX and UI feedback in the video player when in replacement mode vs normal mode. 
+- New load database backup option in the Database menu. Replaces current database with a backup of your choosing.
+- Added shortcuts for navigating next and previous markers in the video player with selection state handling in the marker list.
+- Added unload project option in the projectpanel context menu.
+- When switching between projects, video player now unloads and reloads.
+- Fixed bug with thumbnail creation not fully completing and possible memory/database layer mismatching. 
+ - Filtering and search logic in the marker list during normal view, now fully leverages SQLITE queries instead of Python. 
+- Reduced the size of MarkerThumnbails in cross project view by 15%.
+
+What's new in 6.2.0
+- All peek dialogs and playlists now have a FPS adjustment.
+- Eliminated expensive apply_filters calls in key areas throughout the application to improve preformance, replaced with targeted updates.
+- Immediate feedback and addition of loading placeholders for markers when they are being created.
+- Design overhaul for "Rename Markers" dialog
+- Fixed bug in FCP XML import due to mismatching Audio parameters. Now we just let premiere handle audio detection.
+- Consolidated numbering logic to be consistent across the board.
+- Fixed bug were hover states could hang after drag and drop.
+- Optimizations to video file importing and thumbnail creation.
+What's new in 6.1.0
+- Critical Feature: New workflow. Users can now drag and drop video files and folders with video files directly into the Marker List, and then edit the video files after import. 
+- Thumbnails are generated on the fly in batches using parallel processing, auto generates thumbnails if no thumbnail is available.
+- You can now scrub in the peek dialog with a playhead on hover.
+- Fixed bug where auto scroll could hang.
+- Scroll pos restoration improvements after drag and reordering in the marker list.
+- Selection state is now restored after drag and reorder in the marker list. 
+- Added empty content placeholder text.
+
+What's new in 6.0.0
+- Critical Feature: You can now seemlessly drag and drop markers AND folders  with both single and multi-selection directly into Adobe Premiere, from both normal and cross projecct view, and automatically migrate marker titles, in/out points, and descriptions.
+- Critical Feature: Can now use labels to color markers, these labels translate into premiere pro when you drag and drop!
+- Improved visual hover and selection state handling for markers and folders.
+- Redesigned marker context menus to be more clear and compact.
+- Drag creates an FCPXML that is saved in a temp folder. 
+-Added temp xml file cleanup on startup and after dragging. 
+-Added delete key shortcut to markerlistwidget.
+
+
+What's new in 5.8.5
+- Can now externally drag and drop markers outside of the application and into other programs, like Adobe Premiere Pro.
+- Can externally drag and drop folders outside of hte application into premiere pro.
+- Can now drag a marker back into the video player widget
+- External drags into the program now close the PeekDialog automatically to prevent modality blocing video player drop.
+- General quality of life bug fixes in PeekDialog. 
+- Bug fixes in batch export functionality. 
+- Fixed bug where external drags would be accepted on marker thumbnail and the auto scroll area. 
+
+What's new in 5.8.0
+- Clip Name options renamed to "Marker Titles"
+- New Marker Title filtering dialog in cross project view that works similarly to the tag filtering. 
+- Improved many UI and UX issues in the cross project view and its sub-dialogs all around to be cleaner and less cluttered.
+- Redesigned peek dialog to be more compact and modern.
+- Improved performance of the peek dialog by having the dialog UI appear immediately instead of waiting for video to finish loading.
+- UI improvements to FIlteredPlaylist and FolderPeekDialog, including fixes to hover styling.
+- Can now multi-select batch peek folders. 
+- Fixed project year getting truncated in the project panel for currently selected projects.
+- Added in sort options to the cross project view. Can sort alphabetically by client or by project date. Default is client. 
+- Fixed a bug where searching in cross project view could cause the application to lose window focus.
+- Fixed a bug where find in explorer could fail, if a hard disk had to spin up first to access files. 
+- Shortcut (F) for find in explorer, now works for multi-selection
+
+What's new in 5.7.1
+- Critical bug fix in tags list that impacted data persistence.
+- Can now import missing tags into the tags list.
+- Improved tag preset import layout to be more compact.
+- Fixed bugs with tag preset search bar functionality.
+
+
+What's new in 5.7.0
+ - Add LUT integration, can add LUTS and embed into video player and all peek dialogs.
+  - Fixed search all focus loss during typing (Cross project)
+  - Fixed tag searching in search all functionality (Cross project)
+ - Fixed bug where project filters in cross project view would not persist after state change.
+ - Added "Find in Explorer" context menu option, with single and multi-selection support.
+ - Clip name templates now support exclusion filtering
+ - Fixed bug where filtered playlist in cross project view was not respecting filtered tags.
+  - Redesigned folder peek and filtered playlist video player controls for a modern compact layout.
+ - UI improvements to MarkerListWidget to make it feel less cluttered.
+ - FolderPeekDialog now has a load progress if loading a folder with many markers.
+  - Folder/Filtered Playlists now link source clip path for easy access.
+  - Fixed SQL aggregate error in cross project
+ - Fixed crash in project settings dialog.
+ - Various bug fixes to filtering, and cross project to normal view state persistence.
+
+What's new in 5.6.5
+- Overhauled and improved UX for cross-project tag filtering functionality. 
+- Improved UI and layout of various elements in cross-project view.
+- Currently Viewing: "X" Project sticky label in cross project view.
+- More bug fixes for UI inconsistencies and data persistence issues involving database presets and the tag list. 
+
+What's new in 5.6.0
+- Added in negative filtering to Advanced Filter Dialog and Cross Project View.
+- Redesigned Project Manager dialog to be more compact.
+- Fixed a bug in premiere integration, where subsequent reorderings on the same project would corrupt bin index numbering.
+- Minor ui adjustments to search bars in cross project view.
+- All search functionality in cross project view is comma separated now instead of semi-colon.
+-Clip name filtering in cross project view now properly exclusively targets clip names (not tags). 
+-When renaming a loaded project, it first unloads the project before renaming to prevent file lock issues.
+- Collapse/Expand All operations in cross project view now properly save their states
+ - Fixed a bug where qthread would be destroyed and result in crash.
+
+
+What's new in 5.5.5
+ -Major bug fix in premiere integration that was causing file corruption through the clip duplication process.
+- New "Help" menu with help dialog and shortcut dialog.
+- Fixed bug where clip name presets  didn't save in TagListDialog
+- Improvements to UI for Premiere Integration dialog.
+- Improvements to help dialog for Premiere Integration.
+
+What's new in 5.5.4
+ -Reduced progress dialog size for relinker.
+- Improved import tag workflow in project tag list dialog.
+- Added progress feedback for large playlist operations.
+- Removed auto folder detection from clip marker creation dialog.
+
+What's new in 5.5.3
+ -Project dates: Added Year/Month field to projects
+ -Panel years: Added year badges [2024] to project panel
+ -Cross-project sorting: Sort by date, show client folders
+ -Fixed bug with drag-drop reordering in project panel.
+- Filtered playlist now respects breadcrumb navigation
+- Taskbar icon now stays visible in floating widget form.
+- Fixed a bug that caused a crash during batch export.
+- FirstTimeSetupDialog now can be closed.
+
+What's new in 5.5.2
+-Fixed database connection timeout issues that caused 'disk I/O error' when loading projects after periods of inactivity
+
+What's new in 5.5.1
+-Fixed bugs in the project tag list.
+-Renaming and Deleting tags from the database tag list dialog, now can also delete tags across project tag lists and the preset list. 
+-Various improvements error handling.
+-Performance improvements to cross project mode virtual scrolling.
+-Fixed bugs with cross project view search performance.
+-Fixed bug with mpv initialization and detection logic.
+-Adjustment hardware accel to work better on a wider arrange of platforms without crashing.
+
+What's new in 5.5.0
+-Hardware acceleration detection is now done once on program startup.
+-Added in support for Intel Quicksync
+-Vastly improved batch exporting speeds to support parallel processing, better CPU + GPU leverage, as well as properly utilize quick sync and nvenc. 
+-Improved single clip exporting to better utilize CPU and GPU.
+-All clip exporting via the VideoClipMarker dialog is now fully done in the background, without blocking the UI, and is queued via the new Export Queue dialog. 
+-New H.265 High Quality export option.
+-Fixed bug where a source clip loaded into the MPV Video Player would lock the exported clip file, prevented it from being deleted.
+
+What's new in 5.4.0
+-New Marker Clip Exporter dialog that will scan the project and export clips for markers without clips. When called from a marker's context menu, you can restrict export to selection and re-export clips to different codecs. 
+-New Create Thumbnails dialog to create thumbnails for markers that lost their thumbnails.
+-Can now batch copy folders to other projects.
+-All batch marker copying methods now have load progres. 
+-There is now a search bar for projects.
+-Some minor UI improvements.
+-Fixed a crash in project settings dialog. 
+-Fixed a bug where folder context menu's would trigger when a peek dialog would close.
+-Fixed unnecessary call to save_marker_order when the folder peek dialog would close.
+
+What's new in 5.3.9
+-Added media offline overlays to thumbnails.
+-Fixed bug in cross project view where wrong clip paths were being used during peek dialog
+
+What's new in 5.3.8
+-Added improved conflict resolution and file naming UX for AutoReorderPremiereDialog. 
+-Fixed bug where debug xml was created no matter what.
+-Running the auto-reorder dialog on several times on the same project should respect existing Video Marker Sorted folder and not create duplicate folders.
+
+What's new in 5.3.7
+-Resolved phantom thumbnails appearing on wrong widgets.
+-Prevented duplicate context menus after modal dialog closure
+-Folders now accept drops into folders. 
+-Resolved several major selection state visual inconsistencies that were damaging UX during drag/drop operations for Markers and Folders.
+-Selection visuals no longer clear when scrolling while in Cross Project View. 
+-Added collapse all and uncollapse all buttons into cross project view mode.
+
+What's new in 5.3.5
+-Optimized database initialization with lazy loading. Does not load all projects with markers immediately into self.projects on startup, instead caches markers on project load.
+-Improved apply_filters to better leverage sqlite efficiencies.
+-Backend improvements and redesigns to the tag list data flow for improved persistence. Hopefully edge cases where tag list ordering was altered at program startup. 
+-Tag list dialog now supports multi-select batch removal.
+-Other minor improvements. 
+
+What's new in 5.3.0
+-New and improved Copy Markers to Project dialog.
+-New and improved Filtered Projects dialog.
+-New and improved Database Tag List dialog.
+-Fixed major bugs with drag and drop reordering and persistence. More could still be.
+-Fixed other related UI bugs in the marker list. 
+-Favoriting a thumbnail no longer triggers a whole marker list refresh.
+-Can now globally rename a tag.
+-Can now globally delete a tag.
+
+What's new in 5.2.0
+-New Project Manager to manage and organize projects.
+-Overhauled UI design of the video player.
+- Can now collect clips by clip selection in the marker list.
+-New Client Folder option to Project List to help organization.
+-Can now reorder the client list.
+-Clip Names now invalidate invalid characters.
+-Tags now invalidate invalid characters.
+-Optimized marker reordering to better take advantage of sqlite.
+-Fixed major bugs in Sort Project Markers logic.
+-Fixed logic in how items are arranged during folder peek, filtered playlist, and cross-project view.
+
+What's new in 5.1.0
+-Overhauled UI for TagListDialog
+-Can now create tag presets.
+-Can now import tag presets into projects or import tags from other projects.
+-Improved the way tags are displayed on Marker Thumbnails to reduce clutter.
+
+What's new in 5.0.3
+-Improved UX for apply tags.
+-Improved pinning system, now saves to the database + UX improvements.
+
+What's new in 5.0.2
+-Added Database Tag List dialog.
+-Added the ability to pin clip marker settings to be reused within the project.
+-Fixed bugs with selecting markers in cross project view
+-Fixed bug where copying markers to another project didnt account for duplicates.
+-Deleting a marker will now clean up tags that are no longer used in that project.
+-Fixed window flash when  creating virtual grid in cross project view mode.
+
+What's new in 5.0.1
+-Implemented Full-Text Search (FTS5) to improve text-based search optimization.
+-Key optimization in the Virtual Grid Widget and virtual scrolling implementation for cross project view mode.
+-Improved ux in the way the grid updates in cross project view mode when searching.
+-You can now collapse the Project list.
+- Project names in the project list get truncated + tooltips.
+
+What's new in 5.0.0
+-Complete overhaul of the underlying database structure from JSON to SQLITE.
+-Cross-project search is now available.
+-Cross-project marker and folder transferring is now available.
+-Projects are now handled within a Database. User can create, multiple databases, which in turn contain multiple projects.
+
+What's new in 4.9.8
+-Improved dialog layouts and tweaked UI design for Premiere Pro Integration and Collect Clips.
+-Collect clips now have checkboxes next to each clip to allow user to individually select clips they want to collect.
+-Premiere Pro auto reorder now gzips files with matching premiere pro created prproj file parameters.
+-Thumbnail generation for source video only clips occurs totally asynchronously and finishes after the load progress ends, for a snappier quicker process overall.
+
+What's new in 4.9.7
+-Added option to toggle between showing folders along with markers to just showing all the markers outside of their folder. 
+-Adjusted filtering logic to always default to showing all.
+
+What's new in 4.9.6
+-Fixed duplicating a clip in the AutoPremiereProjectWorker, failing to duplicate all the required values and use a unique MediaUID, which could lead to project corruption down the line.
+-Fixed other logic in AutoPremiereProjectWorker to safeguard against project corruption.
+
+What's new in 4.9.5
+-New folder playlist and Filtered playist. A collected playlist that appears as a peek dialog that features all the videos in the folder/filter criteria. Optimized and performant.
+-Improved export speed optimization. GPU check is cached and happens on videomarker dialog load. Tweaked h.264 export settings to be more performant. Tweaked thumbnail gathering to be more performant. 
+-Fixed major bug that triggered after opening and closing multiple peek dialogs during a session. The bug would break all drag and dropping in the application.
+-Improved intiialization time of the peek dialog by having it use cached fps values instead of constantly probing. 
+
+What's new in 4.9.1
+-Folders now have selection states and can be multi-selected.
+-Fixed bugs in markerlist around selecting items folders/markers
+-Folders and markers can now be moved freely around the list and are not separated distinctly.
+- Adjusted drag drop logic.
+
+What's new in 4.9.0
+-Imrpoved functionality and logic of auto-reorder premiere and export in and out points.
+-Improved load progress dialog for both.
+-Fixed a lot of bugs in those two functionalities.
+
+
+What's new in 4.8.0
+- Added comprehensive Relinking functionality for missing clips or moved directories.
+- Migrated the peekdialog away from QMediaPlayer to use MPV.
+- Added in a Source Clip only export method, which doesnt export any clip, it just saves the in and out points. The peek dialog will only play the in and out points using the source clip instead of an exported clip.
+- Massive bug fixing of premiere pro export functionality, to better handle large XML files. Switches to lxml, memory optimizations.
+
+What's new in 4.7.0
+-Added ability to export in and out points into Premiere Pro.
+- Added ability to reorder and restructurte Premiere bins and clips to match Video Marker project.
+- Fixed bug with setting in and out points. 
+- Improved visual of in and out points on the timeline.
+- Optimized and improved the performance and snappiness of the mpv video player to be more responsive and properly utilize hardware acceleration. 
+
+What's new in 4.6.0
+- Can now add new folder in marker dialog
+- Folders will automatically be selected in marker dialog based on clip name
+- Clip names auto append numericals to avoid same names
+- Added "move" option to collect clips.
+- Can now batch select markers to add to folder or delete.
+- Can edit and delete tag category headers on a per project basis.
+- Only tag categories with nested tags are shown, while unused categories are hidden.
+
+
+What's new in 4.5.1
+- Added in Tag List category labels to help organize tags visually.
+- Added default playback fps setting in project settings
+
+What's new in 4.5.0
+- Added in Tag List and Clip Names preset with synergy in marker search/filtering and in collect clips filtering mechanisms.
+- Restructured how clips are named by Name (#Tag1, #Tag2 etc...)
+- Reduced video export options to two simple presets.
+- Added in a Project Settings menu, with two options currently.
+- Collect Clips can now batch relink multiple files at once based on a folder location.
+- Other minor bug fixes.
+
+What's new in 4.0.0 
+-Critical Feature: Changed the underlying media player system from QMediaPlayer to MPV to massively improve optimization, scrubbing feedback, and support for professional video codecs.
+
+What's New in 3.0.0 
+- Critical Feature: virtual grid system in the marker list\
+ - Critical feature: Memory cacheing
+   
+What's new in 2.6.0
+- Added Collected Clips dialog. Can now collect clips and copy to a single location. 
+- Improved timeline visuals, scrubbing ux. 
+- Video export progress dialog provides better feedback. 
+- Added shortcuts to open close nad navigate peek dialogs.
+  
+What's new in 2.0.0 
+- Added VideoClipMarkerDialog can now set in and out points and export video markekrs.
+  
+V1.0.0 
+- First version. No video functionality at all. Just takes screenshots. 
+
