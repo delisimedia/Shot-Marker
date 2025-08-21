@@ -1,6 +1,6 @@
 # ShotMarker — High-Performance Pre‑Production Video Logger and Database Builder
 
-ShotMarker is a fast, streamlined pre‑production tool for building local, easy‑to‑search video databases designed as a replacement for the pre-production workflow in Adobe Premiere Pro. It’s designed to make logging b‑roll and assembling selects frictionless — even across dozens of projects and tens of thousands of clips. Most importantly, it allows you to build large databases of footage that is fast, optimized, filterable and searchable across projects.
+ShotMarker is a fast, streamlined pre‑production tool for building local, easy‑to‑search video databases designed to fit in well within the pre-production workflow. It’s designed to make logging b‑roll and assembling selects frictionless — even across dozens of projects and tens of thousands of clips. Most importantly, it allows you to build large databases of footage that is fast, optimized, filterable and searchable across projects, with direct support for Adobe Premiere Pro - allwoing you to drag and drop directly into the program and generate sequences.
 
 ## Why ShotMarker
 
