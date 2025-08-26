@@ -1,5 +1,12 @@
 **Full Version History**
 
+What's new in 6.7.8
+- Fixed bug in Timeline View where if proxy clips were enabled while in cross project mode, the timeline would fail to setup properly.
+- Possible fix for a major data integrity issue involving tags and mismatches between memory and sql database after marker creation.
+
+What's new in 6.7.7
+- Upgraded ffmpeg version to the latest major release: v8.0
+
 **What's new in 6.7.6**
 - Critical fixes: Identified and corrected several major bugs in seeking and playback accuracy in timeline view.
 - Upgraded ffmpeg version and now PROPERLY packaged ffmpeg with the application.
