@@ -1,12 +1,15 @@
 **Full Version History**
 
-What's new in 6.7.8
+### What's new in 6.7.8
 - NEW: You can now create, store, and apply multiple pins per project. 
 - Pins can have custom names. 
 - Fixed bug in Timeline View where if proxy clips were enabled while in cross project mode, the timeline would fail to setup properly.
 - Possible fix for a major data integrity issue involving tags and mismatches between memory and sql database after marker creation.
+- Critical fix for a race condition that led to a crash when unloading video.
+- Fix for bug where clip auto-incrementation wasn't happening while in replacement mode.
+- Fixed bug where clicking the favorites star on a marker would also favorite a different marker.
+- Fixed bug that could cause thumbnails to disappear on subsequent markers in the virtual grid after marker creation/insertion.
 - TagSelectionDialog now has the enhanced tag searching functionality that the other dialogs have.
-
 What's new in 6.7.7
 - Upgraded ffmpeg version to the latest major release: v8.0
 
