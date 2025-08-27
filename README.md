@@ -11,7 +11,7 @@ ShotMarker is a fast, streamlined pre‑production tool for logging, tagging, an
 
 ## Core Features
 
-- Tagging System: apply, search, and preset tags; organize b‑roll by client, topic, or any taxonomy.
+- Tagging System: Create your own tags, create your own presets and pinned settings. System is designed to make tagging quick and efficient.
 - Cross‑Project Database: search across multiple projects with combined tag and title filtering.
 - MPV Playback: hardware‑accelerated playback (when supported), exact seeks, and responsive scrubbing.
 - FFmpeg Export: create lightweight preview proxies (H.264/HEVC), native MOV, or ProRes
