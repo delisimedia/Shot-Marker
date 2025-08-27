@@ -18,7 +18,7 @@ ShotMarker is a fast, streamlined pre‑production tool for logging, tagging, an
 - Premiere Integration:
   - Drag‑and‑drop markers into Premiere; in/out points, names, labels, descriptions, and tags come along.
   - Generate importable Premiere sequences (XMEML/FCP XML) from selected markers.
-- Localized Media Previews: auto‑export compact per‑marker clips on creation, turning e.g. 300 GB of raw into ~50 MB of previews for quick sharing or on‑the‑go review.
+- Localized Media Previews: auto‑export compact per‑marker clips on creation, turning e.g. 300 GB of raw into ~50 MB of previews for quick localized previewed storage of years and years of video production work on a single portable drive.
   
 ## Designed for Scale
 
