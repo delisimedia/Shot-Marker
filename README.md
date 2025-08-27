@@ -40,12 +40,6 @@ ShotMarker is a fast, streamlined pre‑production tool for logging, tagging, an
 Download the latest release here: https://github.com/delisimedia/Shot-Marker/releases
 
 
-## Notes
-
-- Drag‑and‑Drop: Alt‑drag from ShotMarker to import into Premiere where supported.
-- Database: local SQLite per project; cross‑project views let you query multiple projects at once.
-- Performance: MPV options favor fast seeks/hardware decode; FFmpeg exports select hardware encoders when available.
-
 ## Dependencies
 
 - MPV (libmpv)
