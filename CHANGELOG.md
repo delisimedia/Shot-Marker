@@ -9,7 +9,9 @@
 - Fix for bug where clip auto-incrementation wasn't happening while in replacement mode.
 - Fixed bug where clicking the favorites star on a marker would also favorite a different marker.
 - Fixed bug that could cause thumbnails to disappear on subsequent markers in the virtual grid after marker creation/insertion.
+- Fixed a bug that prevented sequence generation.
 - TagSelectionDialog now has the enhanced tag searching functionality that the other dialogs have.
+- 
 What's new in 6.7.7
 - Upgraded ffmpeg version to the latest major release: v8.0
 
