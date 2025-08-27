@@ -45,7 +45,7 @@ Download the latest release here: https://github.com/delisimedia/Shot-Marker/rel
 - Database: local SQLite per project; cross‑project views let you query multiple projects at once.
 - Performance: MPV options favor fast seeks/hardware decode; FFmpeg exports select hardware encoders when available.
 
-## Acknowledgements
+## Dependencies
 
 - MPV (libmpv)
 - FFmpeg / FFprobe
