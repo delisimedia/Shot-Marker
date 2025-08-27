@@ -1,13 +1,16 @@
 # ShotMarker — High-Performance Pre‑Production Video Logger and Database Builder
 
-ShotMarker is a fast, streamlined pre‑production tool for logging, tagging, and building local, easy‑to‑search video databases designed to fit in well within the pre-production workflow. It’s designed to make logging b‑roll and assembling selects frictionless — even across dozens of projects and tens of thousands of clips. Most importantly, it allows you to build large databases of footage that is fast, optimized, filterable and searchable across projects, with direct support for Adobe Premiere Pro - allwoing you to drag and drop directly into the program and generate sequences. Bins, thumbnails, and playback load instantly even with hundreds or thousands of clips.
+ShotMarker is a fast, streamlined pre‑production tool for logging, tagging, and building local, easy‑to‑search video databases designed to fit in well within the pre-production workflow. It’s designed to make logging b‑roll and assembling selects frictionless — even across dozens of projects and tens of thousands of clips. Most importantly, it allows you to build large databases of footage that are fast, optimized, filterable and searchable across projects, with direct support for Adobe Premiere Pro - allwoing you to drag and drop directly into the program and generate sequences. Bins, thumbnails, and playback load instantly even with hundreds or thousands of clips.
 
 ## Why ShotMarker
+
+  Premiere Pro's project files are built on XML files - these are both Premiere's blessing and curse. XML files have allowed for a broad range of compatibility and have been integrated deeply into the Adobe ecosystem, however, XML files are fundamentally a bottleneck to performance. When it comes to some of the simple things that users expect to be quick and snappy, like loading, searching, tagging and accessing data - Premiere Pro falls very short of a good UX. Shot Marker is built with an SQL database model/virtual grid system and takes advantage of excellent open source libraries like mpv and ffmpeg to perform in ways that Premiere simply cannot. 
 
 - Speed: MPV with GPU acceleration provides great scrubbing and playback performance.
 - Focus: Optimized UI/UX streamlines tagging, in/out marking, and sequence assembly.
 - Scale: SQLite + FTS5 full‑text search enable fast cross‑project queries over large libraries, allowing you to search and find footage across all your projects in your database.
 - Portability: exports highly compressed local previews so you can preview footage anywhere without needing access to raw footage that could be spread out between many drives.
+
 
 ## Core Features
 
