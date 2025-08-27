@@ -16,7 +16,7 @@ ShotMarker is a fast, streamlined pre‑production tool for logging, tagging, an
 - MPV Playback: hardware‑accelerated playback (when supported), exact seeks, and responsive scrubbing.
 - FFmpeg Export: create lightweight preview proxies (H.264/HEVC), native MOV, or ProRes
 - Premiere Integration:
-  - Drag‑and‑drop markers into Premiere; in/out points, names, and tags come along.
+  - Drag‑and‑drop markers into Premiere; in/out points, names, labels, descriptions, and tags come along.
   - Generate importable Premiere sequences (XMEML/FCP XML) from selected markers.
 - Localized Media Previews: auto‑export compact per‑marker clips on creation, turning e.g. 300 GB of raw into ~50 MB of previews for quick sharing or on‑the‑go review.
   
